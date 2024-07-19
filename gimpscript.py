@@ -188,7 +188,7 @@ def process_folder(folder_path):
         if lower_file in file_mappings:
             target_dir = os.path.join(base_dir, file_mappings[lower_file])
             target_path = os.path.join(target_dir, file)
-            shutil.move(full_path, target_path)
+            shutil.copyfile(full_path, target_path)
         elif ("skin_palette" in lower_file or "eye_palette" in lower_file or "hair_palette" in lower_file):
             process_palette_image(full_path, folder_path)
         elif lower_file.endswith(".png") and ("heightmap" in lower_file or "mask" in lower_file):
